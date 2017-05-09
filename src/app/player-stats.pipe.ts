@@ -10,7 +10,9 @@ export class PlayerStatsPipe implements PipeTransform {
   transform(player: Player, option: string): any {
     if (option === 'health') {
       var health = player.health / 10;
-      return {'width': `${health*100}%`};
+      var color = health * 120;
+      return {'width': `${health*100}%`,
+              'background-color': `hsl(${color}, 90%, 45%)`};
     }
   }
 

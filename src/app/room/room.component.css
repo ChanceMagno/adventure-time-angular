@@ -1,0 +1,16 @@
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.status-flex {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.progress {
+  display: block;
+  margin-left: 10px;
+  height: 20px;
+}
