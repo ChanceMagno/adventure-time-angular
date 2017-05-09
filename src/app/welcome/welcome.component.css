@@ -1,0 +1,5 @@
+.welcome {
+  display: flex;
+  /*height: 70vh;*/
+  align-items: center;
+}
