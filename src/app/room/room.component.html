@@ -1,3 +1,63 @@
-<p>
-  {{room?.prompt}}
-</p>
+<meta *ngIf="!player" http-equiv="refresh" content="0;url=/" />
+
+<div class="container">
+  <div *ngIf="player">
+    <div class="row">
+      <div class="col s12">
+        <h4 class="center-align">{{player.score}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="progress">
+          <div class="determinate" [ngStyle]="player | playerStats:'health'"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="player.lastResult">
+      <div class="col s12">
+        <div class="card-panel">
+          <span class="">{{player.lastResult}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
+        <span class="">{{room?.prompt}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6">
+      <a class="waves-effect waves-light btn left" (click)="goodChoice()">{{room?.goodChoice}}</a>
+    </div>
+    <div class="col s6">
+      <a class="waves-effect waves-light btn right" (click)="badChoice()">{{room?.badChoice}}</a>
+    </div>
+  </div>
+
+</div>
+
+<div id="loseModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="loseAction">
+  <div class="modal-content">
+    <h4 class="center-align">You Dead</h4>
+    <p class="center-align">Your Score was {{player?.score}}</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect modal-close waves-green btn-flat left" routerLink="">Play Again</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
+
+<div id="winModal" class="modal" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="winAction">
+  <div class="modal-content">
+    <h4 class="center-align">You Won</h4>
+    <p class="center-align">Your Score was {{player?.score}}</p>
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect modal-close waves-green btn-flat left" routerLink="">Play Again</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>

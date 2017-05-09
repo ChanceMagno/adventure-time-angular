@@ -14,6 +14,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { RoomNewComponent } from './room-new/room-new.component';
 import { AdventureService } from './adventure.service';
 import { RoomComponent } from './room/room.component';
+import { PlayerStatsPipe } from './player-stats.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -27,7 +28,8 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     RoomNewComponent,
-    RoomComponent
+    RoomComponent,
+    PlayerStatsPipe
   ],
   imports: [
     BrowserModule,

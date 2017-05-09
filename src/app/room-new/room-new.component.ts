@@ -18,14 +18,16 @@ export class RoomNewComponent implements OnInit {
       prompt: '',
       img: '',
       sequence: '',
-      good: '',
-      bad: ''
+      goodChoice: '',
+      goodResult: '',
+      badChoice: '',
+      badResult: ''
     })
   }
 
   addRoom() {
     const formModel = this.roomForm.value;
-    var newRoom = new Room(formModel.prompt, formModel.img, formModel.good, formModel.bad, formModel.sequence);
+    var newRoom = new Room(formModel.prompt, formModel.img, formModel.goodChoice, formModel.goodResult, formModel.badChoice, formModel.badResult, formModel.sequence);
     this.adventureService.addRoom(newRoom);
     this.roomForm.reset();
   }

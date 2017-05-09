@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdventureService } from '../adventure.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,13 +9,14 @@ import { Router } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private adventureService: AdventureService) { }
 
   ngOnInit() {
   }
 
   start() {
-    this.router.navigate(['room', 2])
+    this.adventureService.createPlayer();
+    this.router.navigate(['room', 1]);
   }
 
 }
