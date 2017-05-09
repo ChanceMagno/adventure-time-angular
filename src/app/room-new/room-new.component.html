@@ -1,0 +1,33 @@
+<div class="row">
+  <form class="col s12" [formGroup]="roomForm">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="prompt" class="materialize-textarea" formControlName="prompt"></textarea>
+        <label for="prompt">Prompt</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="img" type="text" class="validate" formControlName="img">
+        <label for="img">Image URL</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="sequence" type="number" class="validate" formControlName="sequence">
+        <label for="sequence">Sequence #</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="good" type="text" class="validate" formControlName="good">
+        <label for="good">Good Choice</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="bad" type="text" class="validate" formControlName="bad">
+        <label for="bad">Bad Choice</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light" (click)="addRoom()">Add Room</button>
+    </div>
+  </form>
+</div>
